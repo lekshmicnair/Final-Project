@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Predicting Performance in Secondary Schools</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">Home</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="Predict.html">Predict</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Model.html">Model</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="Data.html">Data & Limitations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Research.html">Further Research</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container" style="padding-top: 80px">
+      <div class="row">
+        <div class="col-md-12 bg-light rounded">
+          <div class="box bg-light">
+              <h3 class="title";>Data Sample</h3>
+                  <div class="table-responsive" style="overflow-x:auto; overflow-y:auto; max-width: auto;">
+                      <table class="table table-striped">
+                          <thead>
+                              <tr style="text-align: right;">
+                                  <th></th>
+                                  <th>school</th>
+                                  <th>sex</th>
+                                  <th>age</th>
+                                  <th>address</th>
+                                  <th>family_size</th>
+                                  <th>parents_status</th>
+                                  <th>mother_education</th>
+                                  <th>father_education</th>
+                                  <th>mother_job</th>
+                                  <th>father_job</th>
+                                  <th>reason</th>
+                                  <th>guardian</th>
+                                  <th>travel_time</th>
+                                  <th>study_time</th>
+                                  <th>failures</th>
+                                  <th>school_support</th>
+                                  <th>family_support</th>
+                                  <th>paid_classes</th>
+                                  <th>extra_activities</th>
+                                  <th>nursery_school</th>
+                                  <th>wants_higher_edu</th>
+                                  <th>internet</th>
+                                  <th>romantic</th>
+                                  <th>family_relation</th>
+                                  <th>free_time</th>
+                                  <th>go_out</th>
+                                  <th>weekday_alcohol</th>
+                                  <th>weekend_alcohol</th>
+                                  <th>health</th>
+                                  <th>absences</th>
+                                  <th>Q1_score</th>
+                                  <th>Q2_score</th>
+                                  <th>final_score</th>
+                                  <th>final_letter_grade</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                              <th>0</th>
+                              <td>GP</td>
+                              <td>F</td>
+                              <td>18</td>
+                              <td>U</td>
+                              <td>GT3</td>
+                              <td>A</td>
+                              <td>4</td>
+                              <td>4</td>
+                              <td>at_home</td>
+                              <td>teacher</td>
+                              <td>course</td>
+                              <td>mother</td>
+                              <td>2</td>
+                              <td>2</td>
+                              <td>0</td>
+                              <td>yes</td>
+                              <td>no</td>
+                              <td>no</td>
+                              <td>no</td>
+                              <td>yes</td>
+                              <td>yes</td>
+                              <td>no</td>
+                              <td>no</td>
+                              <td>4</td>
+                              <td>3</td>
+                              <td>4</td>
+                              <td>1</td>
+                              <td>1</td>
+                              <td>3</td>
+                              <td>6</td>
+                              <td>5</td>
+                              <td>6</td>
+                              <td>6</td>
+                              <td>F</td>
+                              </tr>
+                              <tr>
+                              <th>1</th>
+                              <td>GP</td>
+                              <td>F</td>
+                              <td>17</td>
+                              <td>U</td>
+                              <td>GT3</td>
+                              <td>T</td>
+                              <td>1</td>
+                              <td>1</td>
+                              <td>at_home</td>
+                              <td>other</td>
+                              <td>course</td>
+                              <td>father</td>
+                              <td>1</td>
+                              <td>2</td>
+                              <td>0</td>
+                              <td>no</td>
+                              <td>yes</td>
+                              <td>no</td>
+                              <td>no</td>
+                              <td>no</td>
+                              <td>yes</td>
+                              <td>yes</td>
+                              <td>no</td>
+                              <td>5</td>
+                              <td>3</td>
+                              <td>3</td>
+                              <td>1</td>
+                              <td>1</td>
+                              <td>3</td>
+                              <td>4</td>
+                              <td>5</td>
+                              <td>5</td>
+                              <td>6</td>
+                              <td>F</td>
+                              </tr>
+                              <tr>
+                              <th>2</th>
+                              <td>GP</td>
+                              <td>F</td>
+                              <td>15</td>
+                              <td>U</td>
+                              <td>LE3</td>
+                              <td>T</td>
+                              <td>1</td>
+                              <td>1</td>
+                              <td>at_home</td>
+                              <td>other</td>
+                              <td>other</td>
+                              <td>mother</td>
+                              <td>1</td>
+                              <td>2</td>
+                              <td>3</td>
+                              <td>yes</td>
+                              <td>no</td>
+                              <td>yes</td>
+                              <td>no</td>
+                              <td>yes</td>
+                              <td>yes</td>
+                              <td>yes</td>
+                              <td>no</td>
+                              <td>4</td>
+                              <td>3</td>
+                              <td>2</td>
+                              <td>2</td>
+                              <td>3</td>
+                              <td>3</td>
+                              <td>10</td>
+                              <td>7</td>
+                              <td>8</td>
+                              <td>10</td>
+                              <td>F</td>
+                              </tr>
+                              <tr>
+                              <th>3</th>
+                              <td>GP</td>
+                              <td>F</td>
+                              <td>15</td>
+                              <td>U</td>
+                              <td>GT3</td>
+                              <td>T</td>
+                              <td>4</td>
+                              <td>2</td>
+                              <td>health</td>
+                              <td>services</td>
+                              <td>home</td>
+                              <td>mother</td>
+                              <td>1</td>
+                              <td>3</td>
+                              <td>0</td>
+                              <td>no</td>
+                              <td>yes</td>
+                              <td>yes</td>
+                              <td>yes</td>
+                              <td>yes</td>
+                              <td>yes</td>
+                              <td>yes</td>
+                              <td>yes</td>
+                              <td>3</td>
+                              <td>2</td>
+                              <td>2</td>
+                              <td>1</td>
+                              <td>1</td>
+                              <td>5</td>
+                              <td>2</td>
+                              <td>15</td>
+                              <td>14</td>
+                              <td>15</td>
+                              <td>B</td>
+                              </tr>
+                              <tr>
+                              <th>4</th>
+                              <td>GP</td>
+                              <td>F</td>
+                              <td>16</td>
+                              <td>U</td>
+                              <td>GT3</td>
+                              <td>T</td>
+                              <td>3</td>
+                              <td>3</td>
+                              <td>other</td>
+                              <td>other</td>
+                              <td>home</td>
+                              <td>father</td>
+                              <td>1</td>
+                              <td>2</td>
+                              <td>0</td>
+                              <td>no</td>
+                              <td>yes</td>
+                              <td>yes</td>
+                              <td>no</td>
+                              <td>yes</td>
+                              <td>yes</td>
+                              <td>no</td>
+                              <td>no</td>
+                              <td>4</td>
+                              <td>3</td>
+                              <td>2</td>
+                              <td>1</td>
+                              <td>2</td>
+                              <td>5</td>
+                              <td>4</td>
+                              <td>6</td>
+                              <td>10</td>
+                              <td>10</td>
+                              <td>F</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 bg-light rounded">
+          <div class="box bg-light">
+            <h3 class="title";>Data Format</h3>
+            <hr>
+            <p>The datasets were compiled by Paulo Cortez and Alice Silva through surveying two secondary schools, Gabriel Pereira and Mousinho da Silveira, in Portugal in 2008. Alongside the socio-economic survey, students' grades for math and Portuguese were used as core courses in which to test predictive modeling.</p>
+            <p>Explanation of Columns:</p>
+            <p>School - Gabriel Pereira (GP) or Mousinho da Silveira (MS)</p>
+            <p>Address - Rural (R) or Urban (U)</p>
+            <p>Family Size - Less than or equal to 3 (LE3) or Greater than 3 (GT3)</p>
+            <p>Parents Status - Together (T) or Apart (A)</p>
+            <p>Mother / Father Education - (0 - none, 1 - Primary Education up to 4th Grade, 2 - 5th to 9th Grade, 3 - Secondary Education, or 4 - Higher Education)</p>
+            <p>Mother / Father Job - Teacher (teacher), Healthcare (health), Civil Services (services), At Home (at_home), or Other (other)</p>
+            <p>Reason - Why the school was chosen (Close to home (home), Reputation (reputation), Course Availability (course), Other (other)</p>
+            <p>Guardian - Student's Guardian (mother, father, other)</p>
+            <p>Travel Time - Time it takes to travel from home to school (1 - less than 15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - greater than 1 hour)</p>
+            <p>Study Time - (1 - less than 15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - greater than 1 hour)</p>
+            <p>Failures - Number of past class failures (n if 1&lt;=n&lt;3, else 4)</p>
+            <p>School Support - Received extra educational support through school</p>
+            <p>Family Support - Received extra educational support through family</p>
+            <p>Paid Classes - Received extra educational support through paid courses/tutors</p>
+            <p>Extra Activities - Engaged in extra-curricular activities</p>
+            <p>Nursery School - Attended nursery school</p>
+            <p>Wants Higher Edu - Wants to attend higher education</p>
+            <p>Family Relation - Quality of relationship with family (1 - very bad to 5 - excellent)</p>
+            <p>Free Time - Free time after school (1 - very low to 5 - very high)</p>
+            <p>Go Out - Time spent hanging out with friends (1 - very low to 5 - very high)</p>
+            <p>Weekday Alcohol - Weekday alcohol consumption (1 - very low to 5 - very high)</p>
+            <p>Weekend Alcohol - Weekend alcohol consumption (1 - very low to 5 - very high)</p>
+            <p>Health - Current health status (1 - very bad to 5 - very good)</p>
+            <p>Q1 Score - First calendar period score grade</p>
+            <p>Q2 Score - Second calendar period score grade</p>
+            <p>Final Score - Final score grade</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 bg-light rounded">
+          <div class="box bg-light">
+            <h3 class="title";>Limitations</h3>
+            <hr>
+            <p>The main limitation is ethical access to students' socio-economic data and the use of self-reporting surveys. For example, Paulo Cortez and Alice Silva note that "few respondents answered about their family income (probably due to privacy issues)."<sup>1</sup> It is also possible that students did not answer certain questions honestly for fear of reprisal or embarassment, such as the questions on alcohol consumption.</p>
+            <a href="http://www3.dsi.uminho.pt/pcortez/student.pdf"><sup>1</sup>"Using Data Mining to Predict Secondary School Student Performance", Paulo Cortez and Alice Silva</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
