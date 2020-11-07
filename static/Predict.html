@@ -38,7 +38,121 @@
         </div>
       </nav>
 
-    
+      <div class="container" style="padding-top:100px">
+        <div class="row">
+          <div class="col-md-3 bg-light" id="corner1">
+            <form>
+              <div class="form-group">
+                <label for="addressInput">Address</label>
+                <select class="form-control" id="addressInput">
+                  <option value="0">Urban</option>
+                  <option value="1">Rural</option>
+                </select>
+                <small id="Parameters" class="form-text text-muted">Which describes home address</small>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-3 bg-light">
+            <form>
+              <div class="form-group">
+                <label for="pStatusInput">Status of Parents</label>
+                <select class="form-control" id="pStatusInput">
+                  <option value="0">Apart</option>
+                  <option value="1">Together</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-3 bg-light">
+            <form>
+              <div class="form-group">
+                <label for="ttInput">Travel Time</label>
+                <select class="form-control" id="ttInput">
+                  <option value="1">Less than 15 Minutes</option>
+                  <option value="2">15-30 Minutes</option>
+                  <option value="3">30 Minutes to 1 Hour</option>
+                  <option value="4">Greater than 1 Hour</option>
+                </select>
+                <small id="Parameters" class="form-text text-muted">Amount of time it takes to travel to school</small>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-3 bg-light" id="corner2">
+            <form>
+              <div class="form-group">
+                <label for="failuresInput">Failures</label>
+                <select class="form-control" id="failuresInput">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3 or more</option>
+                </select>
+                <small id="Parameters" class="form-text text-muted">Number of past failed classes</small>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 bg-light" id="corner3">
+            <form>
+              <div class="form-group">
+                <label for="higherEdInput">Seeking Higher Education</label>
+                <select class="form-control" id="higherEdInput">
+                  <option value="0">Yes</option>
+                  <option value="1">No</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-3 bg-light">
+            <form>
+              <div class="form-group">
+                <label for="motherJobInput">Mother's Job</label>
+                <select class="form-control" id="motherJobInput">
+                  <option value="0">At Home</option>
+                  <option value="1">Health</option>
+                  <option value="2">Services</option>
+                  <option value="3">Teacher</option>
+                  <option value="4">Other</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-3 bg-light">
+            <form>
+              <div class="form-group">
+                <label for="fatherJobInput">Father's Job</label>
+                <select class="form-control" id="fatherJobInput">
+                  <option value="0">At Home</option>
+                  <option value="1">Health</option>
+                  <option value="2">Services</option>
+                  <option value="3">Teacher</option>
+                  <option value="4">Other</option>
+                </select>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-3 bg-light" id="corner4">
+            <form>
+              <div class="form-group">
+                <label for="reasonInput">Reason for Choosing School</label>
+                <select class="form-control" id="reasonInput">
+                  <option value="0">Close to home</option>
+                  <option value="1">Available courses</option>
+                  <option value="2">Reputation</option>
+                  <option value="3">Other</option>
+                </select>
+              </div>
+            </form>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col text-center">
+            <button type="submit" class="btn btn-light">Predict</button>
+          </div>
+        </div>
+      </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

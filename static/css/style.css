@@ -51,6 +51,19 @@ body{
     background-color: white;
 }
 
+#corner1{
+    border-top-left-radius: 5px;
+}
+#corner2{
+    border-top-right-radius: 5px;
+}
+#corner3{
+    border-bottom-left-radius: 5px;
+}
+#corner4{
+    border-bottom-right-radius: 5px;
+}
+
 /* navbar styling*/
 .navbar{
     padding-top:0px;
