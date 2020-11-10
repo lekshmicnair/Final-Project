@@ -22,7 +22,7 @@
                 <a class="nav-link" href="Predict.html">Predict</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="Results.html">Results & Visualizations</a>
+                <a class="nav-link active" href="Results.html">Analysis</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="Model.html">Model</a>
@@ -37,40 +37,147 @@
           </div>
         </div>
       </nav>
+
+      <div class="header-row" id="header-row" style="padding-top: 50px; overflow:hidden;">
+        <div class="container-fluid" style="padding: 0px;">
+            <div class="row"> 
+                <div class="col-xs-12"></div> 
+                    <img src="../Images/Students.png" alt="Website header image" style="width: 100%;">
+                </div>     
+            </div>
+        </div>
+    </div>
       <br>
 
       <div class="container">
         <div class="row">
           <div class="col-md-12 bg-light rounded">
             <div class="box bg-light">
-              <h3 class="title";>Data Analysis</h3>
+              <h3 class="title";>Does parents education level affect the kids performance?</h3>
               <hr>
-              <p>The datasets were compiled by Paulo Cortez and Alice Silva through surveying two secondary schools, Gabriel Pereira and Mousinho da Silveira, in Portugal in 2008. Alongside the socio-economic survey, students' grades for math and Portuguese were used as core courses in which to test predictive modeling.</p>
-              <p>Explanation of Columns:</p>
-              <p>School - Gabriel Pereira (GP) or Mousinho da Silveira (MS)</p>
-              
+              <div class="thumbnail">
+                <img class="img-thumbnail float-left" src="../Visualizations/father_edu.png" width="50%" alt="Father education">
+            </div>
+            <div class="thumbnail">
+              <img class="img-thumbnail float-right" src="../Visualizations/mother_edu.png" width="50%" alt="Mother education">
+          </div>
+            <p> It is no secret that parents are the primary influence in their children’s lives, and above plots shows that parental education has a significant impact on their children’s highschool success. We have used kernel density estimate plots which shows that the parents education level has a positive correlation with the students final score. Parents education level(numeric:  1 - very low to 5 - very high). </p> 
             </div>
           </div>
         </div>
       </div>
     <br>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 bg-light rounded">
-            <div class="box bg-light">
-              <h3 class="title";>Student Performance Analysis</h3>
-              <hr>
-              <p>The datasets were compiled by Paulo Cortez and Alice Silva through surveying two secondary schools, Gabriel Pereira and Mousinho da Silveira, in Portugal in 2008. Alongside the socio-economic survey, students' grades for math and Portuguese were used as core courses in which to test predictive modeling.</p>
-              <p>Explanation of Columns:</p>
-              <p>School - Gabriel Pereira (GP) or Mousinho da Silveira (MS)</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 bg-light rounded">
+          <div class="box bg-light">
+            <h3 class="title";>Is there a gap in performance between rural and urban students?</h3>
+            <hr>
+            <div class="thumbnail">
+              <img class="img-thumbnail float-left" src="../Visualizations/urban_rural.png" width="50%" alt="Father education">
+          </div>
+          <div class="thumbnail">
+            <img class="img-thumbnail float-right" src="../Visualizations/urban_rural_grades.png" width="50%" alt="Mother education">
+        </div>
+          <p> The count plot gives the total number of students in urban and rural schools. Also the bar plot shows that the urban highschool students perform better in final exams compared to the rural highschool students.</p> 
+          </div>
+        </div>
+      </div>
+    </div>
+  <br>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 bg-light rounded">
+        <div class="box bg-light">
+          <h3 class="title";>Is alcohol consumption associated with poor academic performance?</h3>
+          <hr>
+          <div class="thumbnail">
+            <img class="img-thumbnail float-left" src="../Visualizations/weekend_alcohol_grade.png" width="50%" alt="Father education">
+        </div>
+        <div class="thumbnail">
+          <img class="img-thumbnail float-right" src="../Visualizations/alc_consumption.png" width="50%" alt="Mother education">
+      </div>
+        <p> We analyzed and plotted the weekday and weekend alcohol consumption of the students. And both plots indicate that the students performance is negatively associated with the alcohol consumption. Stricter alcohol policies on campus and informative campaigns for students will be helpful. Alcohol Consumption Level (numeric: from 1 - very low to 5 - very high).</p> 
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 bg-light rounded">
+          <div class="box bg-light">
+            <h3 class="title";>Should the students be allowed to go out with friends frequently?</h3>
+            <hr>
+            <div class="thumbnail">
+              <img class="img-thumbnail float-left" src="../Visualizations/going_out.png" width="100%" alt="Father education">
+          </div>
+          <p> The box plot indicates that it is better to limit the frequency of going out as it has a negative correlation with the students final performance. Going out (numeric: 1 - very low to 5 - very high) </p>
               
             </div>
           </div>
         </div>
       </div>
-  
-    
+  <br>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 bg-light rounded">
+            <div class="box bg-light">
+              <h3 class="title";>How important is attendance in academic performance?</h3>
+              <hr>
+              <div class="thumbnail">
+                <img class="img-thumbnail float-left" src="../Visualizations/absences.png" width="50%" alt="Father education">
+            </div>
+            <div class="thumbnail">
+              <img class="img-thumbnail float-right" src="../Visualizations/absences_1.png" width="50%" alt="Mother education">
+          </div>
+            <p> The histogram shows the student count and number of absences. The line plot shows a strong relationship between number of absences and final grade. Student achievement is very sensitive to attendance and attending school daily will help student succeed. This shows that missing school really matters and is essential for schools to measure and track the student absence. </p> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 bg-light rounded">
+            <div class="box bg-light">
+              <h3 class="title";>How does students Quarter-1 and Quarter-2 scores impact Final grade?</h3>
+              <hr>
+              <div class="thumbnail">
+                <img class="img-thumbnail float-left" src="../Visualizations/Q1_final.png" width="50%" alt="Father education">
+            </div>
+            <div class="thumbnail">
+              <img class="img-thumbnail float-right" src="../Visualizations/Q2_final.png" width="50%" alt="Mother education">
+          </div>
+            <p> The quarter one and two scores seems to have a linear relationship with the final grade. We did a linear regression model on the Q1,Q2 scores and the Final Score and the above plot shows their linear relationship. We also calculated the Rsquare values and found that Quarter two has more impact on the final score. So it is a good idea to niter kids performance from the beginning.</p> 
+            </div>
+          </div>
+        </div>
+      </div> 
+      <br>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 bg-light rounded">
+            <div class="box bg-light">
+              <h3 class="title";>Is aspirations for higher education important?</h3>
+              <hr>
+              <div class="thumbnail">
+                <img class="img-thumbnail float-left" src="../Visualizations/desire_he.png" width="50%" alt="Father education">
+            </div>
+            <div class="thumbnail">
+              <img class="img-thumbnail float-right" src="../Visualizations/desire_he_grade.png" width="50%" alt="Mother education">
+          </div>
+            <p> The seaborn violin plot shows that students with higher aspirations put in more study hours. Also the bar chart shows that the desire of going to college has a significant correlation with students final performance. It is always a good idea to talk to students about the values and advantages of higher education.</p> 
+            </div>
+          </div>
+        </div>
+      </div>   
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
