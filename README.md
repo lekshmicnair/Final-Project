@@ -25,7 +25,7 @@ Created final grade column for letter grades A+:18-20 A:16-17 B:14-15 C:10-13 & 
 
 ANALYSIS AND VISUALIZATIONS
 
-Once the data was ready, we created our initial Model. We used Random Forest Classifier. We used final grade as label, and we sorted the rest of factors based on their weight. Then we analyzed the main and interesting factors and created visualizations. The questions we analyzed.
+Once the data was ready, we created our initial Model. We used Random Forest Classifier. We used final grade as label, and sorted the rest of factors based on their weight. Then we analyzed the main and interesting factors and created visualizations. The questions we analyzed.
 
 Does parent’s education level affect the kid’s performance?
 
