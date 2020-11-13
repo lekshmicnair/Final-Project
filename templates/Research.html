@@ -5,44 +5,44 @@
   <meta charset="UTF-8">
   <title>Predicting Performance in Secondary Schools</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="../index.html">Home</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="Predict.html">Predict</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Results.html">Analysis & Visualizations</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Model.html">Model</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Data.html">Data & Limitations</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="Research.html">Further Research</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/Predict">Predict</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Results">Analysis & Visualizations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Model">Model</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Data">Data & Limitations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/Research">Further Research</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
       <div class="header-row" id="header-row" style="padding-top: 50px; overflow:hidden;">
         <div class="container-fluid" style="padding: 0px;">
             <div class="row"> 
                 <div class="col-xs-12"></div> 
-                    <img src="../Images/FRHeader.png" alt="Website header image" style="width: 100%;">
+                    <img src="{{ url_for('static',filename='images/FRHeader.png')}}" alt="Website header image" style="width: 100%;">
                 </div>     
             </div>
         </div>
@@ -51,7 +51,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 bg-light rounded-left">
-                    <a href="http://www3.dsi.uminho.pt/pcortez/student.pdf"><img src="../../Images/CortezSilva.png" width="100%" alt="Cortez Silva Data Mining Secondary School" style="padding:10px"></a>
+                    <a href="http://www3.dsi.uminho.pt/pcortez/student.pdf"><img src="{{ url_for('static',filename='images/CortezSilva.png')}}" width="100%" alt="Cortez Silva Data Mining Secondary School" style="padding:10px"></a>
                 </div>
                 <div class="col-md-9 bg-light rounded-right">
                     <h4 style="padding-bottom:0px">Using Data Mining to Predict Secondary School Student Performance</h4>
@@ -67,7 +67,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 bg-light rounded-left">
-                    <a href="https://www.newamerica.org/education-policy/reports/predictive-analytics-in-higher-education/"><img src="../../Images/PredictiveAnalyticsHigherEd.png" width="100%" alt="Predictive Analysis Higher Education" style="padding:10px"> </a>
+                    <a href="https://www.newamerica.org/education-policy/reports/predictive-analytics-in-higher-education/"><img src="{{ url_for('static',filename='images/PredictiveAnalyticsHigherEd.png')}}" width="100%" alt="Predictive Analysis Higher Education" style="padding:10px"> </a>
                 </div>
                 <div class="col-md-9 bg-light rounded-right">
                     <h4 style="padding-bottom:0px">Predictive Analytics in Higher Education</h4>
@@ -83,7 +83,7 @@
         <div class="container">
           <div class="row">
               <div class="col-md-3 bg-light rounded-left">
-                  <a href="http://kirwaninstitute.osu.edu/research/understanding-implicit-bias/"><img src="../../Images/ImplicitBias.png" width="100%" alt="Implicit bias data analytics" style="padding:10px"></a>
+                  <a href="http://kirwaninstitute.osu.edu/research/understanding-implicit-bias/"><img src="{{ url_for('static',filename='images/ImplicitBias.png')}}" width="100%" alt="Implicit bias data analytics" style="padding:10px"></a>
               </div>
               <div class="col-md-9 bg-light rounded-right">
                   <h4 style="padding-bottom:0px">Understanding Implicit Bias</h4>
@@ -99,7 +99,7 @@
         <div class="container">
           <div class="row">
               <div class="col-md-3 bg-light rounded-left">
-                  <a href="https://www.forbes.com/sites/audreymurrell/2019/05/30/big-data-and-the-problem-of-bias-in-higher-education/?sh=710548f05758"><img src="../../Images/BigDataBias.png" width="100%" alt="Big Data Inequity Bias" style="padding:10px"></a>
+                  <a href="https://www.forbes.com/sites/audreymurrell/2019/05/30/big-data-and-the-problem-of-bias-in-higher-education/?sh=710548f05758"><img src="{{ url_for('static',filename='images/BigDataBias.png')}}" width="100%" alt="Big Data Inequity Bias" style="padding:10px"></a>
               </div>
               <div class="col-md-9 bg-light rounded-right">
                   <h4 style="padding-bottom:0px">Big Data and the Problem of Bias in Higher Education</h4>

@@ -30,7 +30,7 @@ h4{
 
 
 /* fontstyling for text*/
-p{
+.pmain{
    color: grey;
    font-family: 'Times New Roman', Times, serif;
    font-size: medium;
@@ -51,19 +51,6 @@ body{
     background-color: white;
 }
 
-#corner1{
-    border-top-left-radius: 5px;
-}
-#corner2{
-    border-top-right-radius: 5px;
-}
-#corner3{
-    border-bottom-left-radius: 5px;
-}
-#corner4{
-    border-bottom-right-radius: 5px;
-}
-
 /* navbar styling*/
 .navbar{
     padding-top:0px;
@@ -81,7 +68,6 @@ body{
     padding-bottom: 80px;
     overflow: hidden;
 }
-
 
 .content.bg-white {
     margin-top: 15px;
@@ -101,3 +87,36 @@ body{
         padding:inherit;
     }
 }
+
+pre code {
+    background-color: lavender;
+    border: 2px solid grey;
+    display: block;
+    padding: 5px;
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+
+.dia {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+.model {
+    background-color: rgb(223, 222, 222);
+    color: black;
+    text-align: justify;
+    font-size: 2.3ch;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+

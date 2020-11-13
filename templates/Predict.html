@@ -5,49 +5,59 @@
   <meta charset="UTF-8">
   <title>Predicting Performance in Secondary Schools</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="../index.html">Home</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link active" href="Predict.html">Predict</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Results.html">Results & Visualizations</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Model.html">Model</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Data.html">Data & Limitations</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Research.html">Further Research</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="/Predict">Predict</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Results">Analysis & Visualizations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Model">Model</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Data">Data & Limitations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Research">Further Research</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-      <div class="container" style="padding-top:100px">
-        <form>
+  <div class="header-row" id="header-row" style="padding-top: 50px; overflow:hidden;">
+        <div class="container-fluid" style="padding: 0px;">
+            <div class="row"> 
+                <div class="col-xs-12"></div> 
+                    <img src="{{url_for('static', filename='images/PHeader.png')}}" alt="Website header image" style="width: 100%;">
+                </div>     
+            </div>
+        </div>
+    </div>
+
+      <div class="container" style="padding-top:30px">
+        <form action="{{ url_for('predict') }}" method="POST">
           <div class="row">
             <div class="col-md-3 bg-light" id="corner1">
               
                 <div class="form-group">
                   <label for="addressInput">Address</label>
-                  <select class="form-control" id="addressInput">
-                    <option value="0">Urban</option>
-                    <option value="1">Rural</option>
+                  <select name="add" class="form-control" id="addressInput">
+                    <option value="1">Urban</option>
+                    <option value="0">Rural</option>
                   </select>
                   <small id="Parameters" class="form-text text-muted">Which describes home address</small>
                 </div>
@@ -57,7 +67,7 @@
               
                 <div class="form-group">
                   <label for="pStatusInput">Status of Parents</label>
-                  <select class="form-control" id="pStatusInput">
+                  <select name="pStat" class="form-control" id="pStatusInput">
                     <option value="0">Apart</option>
                     <option value="1">Together</option>
                   </select>
@@ -68,11 +78,11 @@
               
                 <div class="form-group">
                   <label for="ttInput">Travel Time</label>
-                  <select class="form-control" id="ttInput">
-                    <option value="0">Less than 15 Minutes</option>
-                    <option value="1">15-30 Minutes</option>
-                    <option value="2">30 Minutes to 1 Hour</option>
-                    <option value="3">Greater than 1 Hour</option>
+                  <select name="tt" class="form-control" id="ttInput">
+                    <option value="1">Less than 15 Minutes</option>
+                    <option value="2">15-30 Minutes</option>
+                    <option value="3">30 Minutes to 1 Hour</option>
+                    <option value="4">Greater than 1 Hour</option>
                   </select>
                   <small id="Parameters" class="form-text text-muted">Amount of time it takes to travel to school</small>
                 </div>
@@ -82,7 +92,7 @@
               
                 <div class="form-group">
                   <label for="failuresInput">Failures</label>
-                  <select class="form-control" id="failuresInput">
+                  <select name="fail" class="form-control" id="failuresInput">
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -98,9 +108,9 @@
                 
                   <div class="form-group">
                     <label for="higherEdInput">Seeking Higher Education</label>
-                    <select class="form-control" id="higherEdInput">
-                      <option value="0">Yes</option>
-                      <option value="1">No</option>
+                    <select name="hEd"class="form-control" id="higherEdInput">
+                      <option value="1">Yes</option>
+                      <option value="0">No</option>
                     </select>
                   </div>
                 
@@ -109,7 +119,7 @@
                 
                   <div class="form-group">
                     <label for="motherJobInput">Mother's Job</label>
-                    <select class="form-control" id="motherJobInput">
+                    <select name="mjob"class="form-control" id="motherJobInput">
                       <option value="0">At Home</option>
                       <option value="1">Health</option>
                       <option value="2">Services</option>
@@ -123,21 +133,22 @@
                 
                   <div class="form-group">
                     <label for="fatherJobInput">Father's Job</label>
-                    <select class="form-control" id="fatherJobInput">
-                      <option value="0">At Home</option>
-                      <option value="1">Health</option>
-                      <option value="2">Services</option>
-                      <option value="3">Teacher</option>
-                      <option value="4">Other</option>
+                    <select name="fjob" class="form-control" id="fatherJobInput">
+                        <option value="0">At Home</option>
+                        <option value="1">Health</option>
+                        <option value="2">Services</option>
+                        <option value="3">Teacher</option>
+                        <option value="4">Other</option>
                     </select>
                   </div>
               
               </div>
+
               <div class="col-md-3 bg-light" id="corner4">
                 
                   <div class="form-group">
                     <label for="reasonInput">Reason for Choosing School</label>
-                    <select class="form-control" id="reasonInput">
+                    <select name="reason" class="form-control" id="reasonInput">
                       <option value="0">Close to home</option>
                       <option value="1">Available courses</option>
                       <option value="2">Reputation</option>
@@ -147,7 +158,7 @@
               
               </div>
             </div>
-        </form>
+        
         </div>
         <br>
         <div class="row">
@@ -155,12 +166,57 @@
             <button type="submit" class="btn btn-light" id="submitBtn">Predict</button>
           </div>
         </div>
+      </form>
       </div>
+
+      <script>
+  
+        document.getElementById("addressInput").selectedIndex = {{inds}}[0];
+
+        document.getElementById("pStatusInput").selectedIndex = {{inds}}[1];
+        document.getElementById("ttInput").selectedIndex = ({{inds}}[2] - 1);
+        document.getElementById("failuresInput").selectedIndex = {{inds}}[3];
+
+        document.getElementById("higherEdInput").selectedIndex = {{inds}}[4];
+        document.getElementById("motherJobInput").selectedIndex = {{inds}}[5];
+        document.getElementById("fatherJobInput").selectedIndex = {{inds}}[6];
+        document.getElementById("reasonInput").selectedIndex = {{inds}}[7];
+      
+      </script>
+    
+
+      <br>
+
+
+  <div class='container'>
+
+    <div class="card text-center bg-success text-white" style='display: {{pass_}};'>
+      <div class="card-header">
+        Prediction
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">This Student is Likely to Pass</h2>
+      </div>
+    </div>
+
+   
+
+    <div class="card text-center bg-danger text-white" style='display: {{fail_}};'>
+      <div class="card-header">
+        Prediction
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">This Student is at Risk of Failing</h2>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="js/predictLogic.js"></script>
 
 </body>
 </html>

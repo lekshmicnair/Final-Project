@@ -5,44 +5,44 @@
   <meta charset="UTF-8">
   <title>Predicting Performance in Secondary Schools</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="../index.html">Home</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="Predict.html">Predict</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Results.html">Analysis & Visualizations</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Model.html">Model</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="Data.html">Data & Limitations</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Research.html">Further Research</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/Predict">Predict</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Results">Analysis & Visualizations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Model">Model</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/Data">Data & Limitations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Research">Further Research</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
       <div class="header-row" id="header-row" style="padding-top: 50px; overflow:hidden;">
         <div class="container-fluid" style="padding: 0px;">
             <div class="row"> 
                 <div class="col-xs-12"></div> 
-                    <img src="../Images/DLHeader.png" alt="Website header image" style="width: 100%;">
+                    <img src="{{ url_for('static',filename='images/DLHeader.png')}}" alt="Website header image" style="width: 100%">
                 </div>     
             </div>
         </div>
@@ -52,8 +52,8 @@
       <div class="row">
         <div class="col-md-12 bg-light rounded">
           <div class="box bg-light">
-              <h3 class="title";>Data Sample</h3>
-                  <div class="table-responsive" style="overflow-x:auto; overflow-y:auto; max-width: auto;">
+              <h3 class="title">Data Sample</h3>
+                  <div class="table-responsive" style="overflow-x: auto; overflow-y: auto; max-width: auto;">
                       <table class="table table-striped">
                           <thead>
                               <tr style="text-align: right;">
@@ -346,7 +346,7 @@
                 Scores less than 10 indicates poor performance and a US grade F is assigned.
                </p> 
                <p> The plot below shows the final grade distribution.</p>
-              <img class="rounded mx-auto d-block" src="../Visualizations/Final_grade.png" width="70%" alt="Final Grade Distribution">
+              <img class="rounded mx-auto d-block" src="{{ url_for('static',filename='images/Final_grade.png')}}" width="70%" alt="Final Grade Distribution">
           </div>
           </div>
         </div>
@@ -362,7 +362,7 @@
             <hr>
             <div class="thumbnail">
               <p> For the initial data analysis we created the heatmap below to understand the correlation between different parameters.  </p> 
-              <img class="img-thumbnail float-left" src="../Visualizations/Heatmap.png" width="100%" alt="Correlation Heatmap">
+              <img class="img-thumbnail float-left" src="{{ url_for('static',filename='images/Heatmap.png')}}" width="100%" alt="Correlation Heatmap">
           </div>
             
           </div>
@@ -374,7 +374,7 @@
       <div class="row">
         <div class="col-md-12 bg-light rounded">
           <div class="box bg-light">
-            <h3 class="title";>Limitations</h3>
+            <h3 class="title">Limitations</h3>
             <hr>
             <p>The main limitation is ethical access to students' socio-economic data and the use of self-reporting surveys. For example, Paulo Cortez and Alice Silva note that "few respondents answered about their family income (probably due to privacy issues)."<sup>1</sup> It is also possible that students did not answer certain questions honestly for fear of reprisal or embarassment, such as the questions on alcohol consumption.</p>
             <a href="http://www3.dsi.uminho.pt/pcortez/student.pdf"><sup>1</sup>"Using Data Mining to Predict Secondary School Student Performance", Paulo Cortez and Alice Silva</a>

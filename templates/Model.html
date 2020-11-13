@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Predicting Performance in Secondary Schools</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles/style.css')}}">
+</head>
+
+<body style="background-color: white;">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/Predict">Predict</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Results">Analysis & Visualizations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/Model">Model</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Data">Data & Limitations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/Research">Further Research</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  div class="header-row" id="header-row" style="padding-top: 50px; overflow:hidden;">
+        <div class="container-fluid" style="padding: 0px;">
+            <div class="row"> 
+                <div class="col-xs-12"></div> 
+                    <img src="{{url_for('static', filename='images/MHeader.png')}}" alt="Website header image" style="width: 100%;">
+                </div>     
+            </div>
+        </div>
+    </div>
+
+  <div class="container"style="margin-top:30px">
+
+    <h1>0. Preparing the Data </h1>
+
+  <div class="container">
+    <div class="row">
+                <div class="table-responsive" style="overflow-x:auto; overflow-y:auto; max-width: auto;">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                            <tr style="text-align: right;">
+                                <th></th>
+                                <th>school</th>
+                                <th>sex</th>
+                                <th>age</th>
+                                <th>address</th>
+                                <th>family_size</th>
+                                <th>parents_status</th>
+                                <th>mother_education</th>
+                                <th>father_education</th>
+                                <th>mother_job</th>
+                                <th>father_job</th>
+                                <th>reason</th>
+                                <th>guardian</th>
+                                <th>travel_time</th>
+                                <th>study_time</th>
+                                <th>failures</th>
+                                <th>school_support</th>
+                                <th>family_support</th>
+                                <th>paid_classes</th>
+                                <th>extra_activities</th>
+                                <th>nursery_school</th>
+                                <th>wants_higher_edu</th>
+                                <th>internet</th>
+                                <th>romantic</th>
+                                <th>family_relation</th>
+                                <th>free_time</th>
+                                <th>go_out</th>
+                                <th>weekday_alcohol</th>
+                                <th>weekend_alcohol</th>
+                                <th>health</th>
+                                <th>absences</th>
+                                <th>Q1_score</th>
+                                <th>Q2_score</th>
+                                <th>final_score</th>
+                                <th>final_letter_grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <th>0</th>
+                            <td>GP</td>
+                            <td>F</td>
+                            <td>18</td>
+                            <td>U</td>
+                            <td>GT3</td>
+                            <td>A</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>at_home</td>
+                            <td>teacher</td>
+                            <td>course</td>
+                            <td>mother</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>yes</td>
+                            <td>no</td>
+                            <td>no</td>
+                            <td>no</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>no</td>
+                            <td>no</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>6</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>6</td>
+                            <td>F</td>
+                            </tr>
+                            <tr>
+                            <th>1</th>
+                            <td>GP</td>
+                            <td>F</td>
+                            <td>17</td>
+                            <td>U</td>
+                            <td>GT3</td>
+                            <td>T</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>at_home</td>
+                            <td>other</td>
+                            <td>course</td>
+                            <td>father</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>no</td>
+                            <td>yes</td>
+                            <td>no</td>
+                            <td>no</td>
+                            <td>no</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>no</td>
+                            <td>5</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>F</td>
+                            </tr>
+                            <tr>
+                            <th>2</th>
+                            <td>GP</td>
+                            <td>F</td>
+                            <td>15</td>
+                            <td>U</td>
+                            <td>LE3</td>
+                            <td>T</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>at_home</td>
+                            <td>other</td>
+                            <td>other</td>
+                            <td>mother</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>yes</td>
+                            <td>no</td>
+                            <td>yes</td>
+                            <td>no</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>no</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>10</td>
+                            <td>7</td>
+                            <td>8</td>
+                            <td>10</td>
+                            <td>F</td>
+                            </tr>
+                            <tr>
+                            <th>3</th>
+                            <td>GP</td>
+                            <td>F</td>
+                            <td>15</td>
+                            <td>U</td>
+                            <td>GT3</td>
+                            <td>T</td>
+                            <td>4</td>
+                            <td>2</td>
+                            <td>health</td>
+                            <td>services</td>
+                            <td>home</td>
+                            <td>mother</td>
+                            <td>1</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>no</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>5</td>
+                            <td>2</td>
+                            <td>15</td>
+                            <td>14</td>
+                            <td>15</td>
+                            <td>B</td>
+                            </tr>
+                            <tr>
+                            <th>4</th>
+                            <td>GP</td>
+                            <td>F</td>
+                            <td>16</td>
+                            <td>U</td>
+                            <td>GT3</td>
+                            <td>T</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>other</td>
+                            <td>other</td>
+                            <td>home</td>
+                            <td>father</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>no</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>no</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                            <td>no</td>
+                            <td>no</td>
+                            <td>4</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td>4</td>
+                            <td>6</td>
+                            <td>10</td>
+                            <td>10</td>
+                            <td>F</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+
+ 
+
+    <pre>
+    <code>
+  <strong>import</strong> pandas as pd
+  <strong>import</strong> numpy as np
+
+  <i style=color:blue>#creating the Pass / Fail column and adding it to the dataframe</i>
+  student_data_df['Pass_Fail'] = 'None'
+  student_data_df.loc[student_data_df.final_letter_grade != 'F', 'Pass_Fail'] = 'Pass'
+  student_data_df.loc[student_data_df.final_letter_grade == 'F', 'Pass_Fail'] = 'Fail'
+  </code>
+</pre>
+
+  <p class="model">
+    Before constructing a model, the data had to be processed for optimal learning. This included converting all columns with text values
+    into integers. For the columns with only two different values, a list comprehension was used to binary-encode the data. Columns with multiple text values
+    ('mother_job', 'father_job', 'reason') were split up into multiple binary-encoded columns using the pandas.get_dummies() function.
+    Finally, the 'Pass_Fail' column was one-hot-encoded.
+  </p>
+
+<pre>
+  <code>
+  <strong>from</strong> sklearn.preprocessing <strong>import</strong> LabelEncoder()
+
+  student_data_df[&lt;column&gt;] = [1 <strong>if</strong> x == &lt;value.1&gt; <strong>else</strong> 0 <strong>for</strong> x <strong>in</strong> student_data_df[&lt;column&gt;]]
+    ...
+  X = student_data_df.drop(['Q1_score', 'Q2_score', 'final_score', 'final_letter_grade', 'Pass_Fail'], axis=1)
+  X = pd.get_dummies(X, columns=['mother_job','father_job','reason'])
+
+  y = student_data_df['Pass_Fail']
+  label_encoder = LabelEncoder()
+  label_encoder.fit(y)
+  encoded_y = label_encoder.transform(y)
+</code>
+
+</pre>
+
+<div class="table-responsive" style="overflow-x:auto; overflow-y:auto; max-width: auto;">
+  <table class="table table-striped table-hover">
+      <thead>
+          <tr style="text-align: right;">
+              <th>school</th>
+              <th>sex</th>
+              <th>age</th>
+              <th>address</th>
+              <th>family_size</th>
+              <th>parents_status</th>
+              <th>mother_education</th>
+              <th>father_education</th>
+              <th>mother_job_health</th>
+              <th>mother_job_services</th>
+              <th>mother_job_teacher</th>
+              <th>mother_job_at_home</th>
+              <th>mother_job_other</th>
+              <th>father_job_health</th>
+              <th>father_job_services</th>
+              <th>father_job_teacher</th>
+              <th>father_job_at_home</th>
+              <th>father_job_other</th>
+              <th>reason_reputation</th>
+              <th>reason_course</th>
+              <th>reason_home</th>
+              <th>reason_other</th>
+              <th>guardian</th>
+              <th>travel_time</th>
+              <th>study_time</th>
+              <th>failures</th>
+              <th>school_support</th>
+              <th>family_support</th>
+              <th>paid_classes</th>
+              <th>extra_activities</th>
+              <th>nursery_school</th>
+              <th>wants_higher_edu</th>
+              <th>internet</th>
+              <th>romantic</th>
+              <th>family_relation</th>
+              <th>free_time</th>
+              <th>go_out</th>
+              <th>weekday_alcohol</th>
+              <th>weekend_alcohol</th>
+              <th>health</th>
+              <th>absences</th>
+          </tr>
+        </thead>
+        <tr>
+          <td> 1 </td>
+          <td> 0 </td>
+          <td> 19 </td>
+          <td> 1 </td>
+          <td> 1 </td>
+          <td> 1 </td>
+          <td> 4 </td>
+          <td> 3 </td>
+          <td> 1 </td>
+          <td> 0 </td>
+          <td> 0 </td>
+          <td> 0 </td>
+          <td> 0 </td>
+          <td> 0 </td>
+          <td> 0 </td>
+          <td> 1 </td>
+          <td> 0 </td>
+          <td> 0 </td>
+          <td> 1 </td>
+          <td> 0 </td>
+          <td> 0 </td>
+          <td> 0 </td>
+          <td> 1 </td>
+          <td> 2 </td>
+          <td> 4 </td>
+          <td> 0 </td>
+          <td> 1 </td>
+          <td> 1 </td>
+          <td> 1 </td>
+          <td> 1 </td>
+          <td> 0 </td>
+          <td> 1 </td>
+          <td> 1 </td>
+          <td> 0 </td>
+          <td> 3 </td>
+          <td> 2 </td>
+          <td> 2 </td>
+          <td> 0 </td>
+          <td> 2 </td>
+          <td> 4 </td>
+          <td> 3 </td>
+      </table>
+</div>
+
+<div class="container">
+  <h1> 1. Deep Learning Model </h1>
+</div>
+<div class="container">
+<img src="{{url_for('static', filename='NeuNet.jpeg')}}", alt='neural network' class='dia'>
+</div>
+
+<p class="model"> 
+  Our first attempt was a neural network with 41 input features, 41 neurons in the first
+  hidden layer, 20 neurons in the second hidden layer, and 2 outputs: Pass or Fail. The 
+  sklearn preprocessing StandardScaler() function was used to condense the X data around 0,
+  thus decreasing the model's bias.
+</p>
+<br>
+<pre>
+<code>
+  <strong>from</strong> sklearn.preprocessing <strong>import</strong> StandardScaler
+  <strong>from</strong> sklearn.model_selection <strong>import</strong> train_test_split
+  <strong>from</strong> tensorflow.keras.utils <strong>import</strong> to_categorical
+  <strong>from</strong> tensorflow.keras.models <strong>import</strong> Sequential
+  <strong>from</strong> tensorflow.keras.layers <strong>import</strong> Dense
+
+  X_scaler = StandardScaler().fit(X_train)
+  X_train_scaled = X_scaler.transform(X_train)
+  X_test_scaled = X_scaler.transform(X_test)
+
+  y_train_categorical = to_categorical(y_train)
+  y_test_categorical = to_categorical(y_test)
+
+  model = Sequential()
+  model.add(Dense(units=41, activation='relu', input_dim=41))
+  model.add(Dense(units=20, activation='relu'))
+  model.add(Dense(units=2, activation='softmax'))
+
+  model.compile(
+      optimizer='adam',
+      loss='binary_crossentropy',
+      metrics=['accuracy']
+      )
+
+  model.fit(
+      X_train_scaled,
+      y_train_categorical,
+      epochs=25,
+      shuffle=True,
+      verbose=2,
+      batch_size=1
+      )
+</code>
+
+  <div class="progress" style="height: 40px" id=neural>
+    <div class="progress-bar  bg-danger" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 77.39%;font-size: 3ch;"> Accuracy: 77.39% </div>
+</div>
+
+</pre>
+</div>
+
+<div class="container">
+  <h1> 2. Random Forest Network </h1>
+  <div class="container">
+    <img src="{{url_for('static', filename='RanFor.jpg')}}", alt='rfn' class='dia'>
+    </div>
+
+  <p class="model">
+    With a baseline score from the neural network, we began to explore other classifiers to 
+    maximize the accuracy of our predictions. Our next model was a Random Forest Classifier made up of 
+    200 individual decision trees that each give a class prediction, and the class with the most 'votes'
+    is chosen as the model's prediction.
+
+  </p>
+  <pre>
+    <code>
+
+      random_state=0
+
+      <strong>from</strong> sklearn.ensemble <strong>import</strong> RandomForestClassifier
+      rf = RandomForestClassifier(n_estimators=200)
+      rf.fit(X_train_scaled, y_train_categorical)
+
+    </code>
+
+  
+    <div class="container">
+      <div class="progress" style="height: 40px" id=RFN>
+          <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="81" aria-valuemin="0" aria-valuemax="100" style="width: 81%;font-size: 3ch;"> Accuracy: 81.22% </div>
+      </div>
+    </div>
+
+  </pre>
+</div>
+
+
+<div class="container">
+  <h1> 3-a. Logistic Regression </h1>
+
+  <div class="container">
+    <img src="{{url_for('static', filename='LogReg.png')}}", alt='logistic regression' class='dia'>
+    </div>
+
+    <p class="model">
+      The last basic model was a Logistic Regression, a model that uses the sigmoid function to sort datapoints
+      into two classes. Since this model produced the best results out of the three we had tested so far, 
+      we decided to do additional research into Logistic Regressions to see what optimizations could be made,
+      and how far we could push the accuracy.
+    </p>
+
+  <pre>
+    <code>
+
+      random_state=0
+
+      <strong>from</strong> sklearn.linear_model <strong>import</strong> LogisticRegression
+      model = LogisticRegression(solver='liblinear')
+      model.fit(X_train_scaled, y_train)
+
+    </code>
+  
+  <div class="container">
+    <div class="progress" style="height: 40px" id=LR1>
+        <div class="progress-bar  bg-warning" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100" style="width: 84.67%;font-size: 3ch;"> Accuracy: 84.67% </div>
+    </div>
+  </div>
+  </pre>
+</div>
+
+<div class="container">
+  <h1> 3-b. Optimized Logistic Regression </h1>
+
+  <p class="model">
+    We were able to implement to modules that drastically improved the performance of the model: over sampling and recursive
+    feature elemination. The imblearn (imbalanced learn) SMOTE() function takes the testing portion of a dataset and synthesizes
+    new X and y pairs such that each class (in this case "Pass" and "Fail") has the same amount of samples. Note that because these 
+    samples are only added to the training data, the accuracy of the model on the testing data is not falsely skewed. 
+
+    Recursive feature elemination iterates through a succession of models, assigning weights to each 'feature' (columns in the
+    X dataset) and removing the least impactful feature with each iteration until the specified number of features is reached. Thus,
+    our model is only trained on the features that have the highest correlation, and becomes more accurate.
+
+    With these two optimizations, our final logistic regression is able to predict whether a student will pass or fail an upcoming
+    class based on eight simple survey questions (see Predict page), with 92% accuracy.
+
+  </p>
+  <pre>
+    <code>
+      <strong>from</strong> imblearn.over_sampling <strong>import</strong> SMOTE
+      state = 1333822816
+
+      os = SMOTE()
+      X_train, X_test, y_train, y_test = train_test_split(X, encoded_y, test_size=0.3, random_state=state)
+      columns = X_train.columns
+      os_data_X,os_data_y=os.fit_sample(X_train, y_train)
+      os_data_X = pd.DataFrame(data=os_data_X,columns=columns)
+      os_data_y= pd.DataFrame(data=os_data_y,columns=['y'])
+
+      <strong>from</strong> sklearn.feature_selection <strong>import</strong> RFE
+
+      logreg = LogisticRegression(solver='liblinear')
+      rfe = RFE(logreg, 20)
+      rfe = rfe.fit(os_data_X, os_data_y.values.ravel())
+
+      cols = []
+      for i in range(len(columns)):
+          if rfe.support_[i]:
+              cols.append(columns[i])
+
+      X = os_data_X[cols]
+      y = os_data_y['y']
+
+      X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=state)
+
+      logreg = LogisticRegression(solver='liblinear')
+      logreg.fit(X_train, y_train)
+
+
+    </code>
+  
+  <div class="container">
+    <div class="progress" style="height: 40px" id=LR2>
+        <div class="progress-bar  bg-success" role="progressbar" aria-valuenow="92" aria-valuemin="0" aria-valuemax="100" style="width: 92.67%;font-size: 3ch;"> Accuracy: 92.03% </div>
+    </div>
+  </div>
+  </pre>
+</div>
+
+
+
+
+
+
+
+ 
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
