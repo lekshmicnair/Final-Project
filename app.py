@@ -4,6 +4,9 @@ import numpy as np
 
 app = Flask(__name__)
 
+filename = "Test_Score_LR_v2.pkl"
+model = pickle.load(open(filename, 'rb'))
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -15,7 +18,6 @@ def data():
 @app.route('/Results')
 def results():
     return render_template('Results.html')
-
 
 @app.route('/Model')
 def model():
@@ -33,10 +35,7 @@ def predict():
         return(render_template('Predict.html', pass_='none', fail_='none', inds=[0,0,1,0,0,0,0,0]))
 
     if request.method == 'POST':
-        filename = "Test_Score_LR_v2.pkl"
-        model = pickle.load(open(filename, 'rb'))
-
-
+       
         X = []
         indices = []
         ints = []
