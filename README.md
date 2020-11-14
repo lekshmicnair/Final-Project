@@ -72,4 +72,4 @@ We used python flask. For the predict page we used GET method to load the page a
 
 CONCLUSION
 
-We hope our prediction tool can be used to help schools and parents improve the kids overall school performance. As a direct outcome of this project, more efficient student prediction tools can be developed, improving the quality of education and enhancing school resource management. The results show that a good predictive accuracy can be achieved, provided that we have access to socio-economic data from various school districts.
+We hope our prediction tool can be used to help schools and parents improve the students overall school performance. As a direct outcome of this project, more efficient student prediction tools can be developed, improving the quality of education and enhancing school resource management. The results show that a good predictive accuracy can be achieved, provided that we have access to socio-economic data from various school districts.
