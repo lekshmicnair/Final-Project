@@ -67,7 +67,7 @@ We saved our final model to Test_Score_LR_v2.pkl pickle file.
 
 PREDICT
 
-We used python flask. For the predict page we used GET method to load the page and POST method when the form was submitted. Which ran the model to display the prediction based on the input parameters. And displayed the final predictions "This Student is Likely to Pass" or "This Student is at Risk of Failing".
+We used python flask. For the predict page we used GET method to load the page and POST method when the form is submitted. Which run the model to display the predictions based on the input parameters. And displayed the final predictions "This Student is Likely to Pass" or "This Student is at Risk of Failing".
 
 
 CONCLUSION
