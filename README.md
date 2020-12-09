@@ -43,6 +43,10 @@ How does students Quarter-1 and Quarter-2 scores impact Final grade?
 
 Are aspirations for higher education important?
 
+FURTHER RESEARCH
+
+We also have a further research page, where we have listed the interesting reads about the studies and research done in the field of higher education and predictive analytics. Pointers for anyone intrested in the doing further research.
+
 MODEL
 
 Before constructing a model, the data had to be processed for optimal learning. This included converting all columns with text values into integers. For the columns with only two different values, a list comprehension was used to binary-encode the data. Columns with multiple text values ('mother_job', 'father_job', 'reason') were split up into multiple binary-encoded columns using the pandas.get_dummies() function. Finally, the 'Pass_Fail' column was one-hot-encoded.
