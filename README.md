@@ -1,10 +1,9 @@
-                              PREDICTING ACADEMIC PERFORMANCE
+# Predicting Academic Performance #                   
 
-HEROKU LINK 
-
+### Deployment on Heroku ###
 https://final-project-heroku-2.herokuapp.com/
 
-INTRODUCTION
+## INTRODUCTION ##
 
 Education is a key factor for achieving long term economic progress. Our project intends to approach student achievement in secondary education using Machine Learning modeling techniques. 
 
@@ -15,7 +14,7 @@ One approach is to utilize machine learning to build predictive models of studen
 
 For example, through predictive modeling, a tutor can be assigned before a student falls behind; or, programs can more actively provide resources to students who might be disadvantaged for various socio-economic factors.
 
-DATA
+## DATA ##
 
 Source: https://archive.ics.uci.edu/ml/datasets/student+performance
 
@@ -25,7 +24,7 @@ Checked for nulls and renamed the columns for better understanding.
 
 Created final grade column for letter grades A+:18-20 A:16-17 B:14-15 C:10-13 & F<10.
 
-ANALYSIS AND VISUALIZATIONS
+## ANALYSIS AND VISUALIZATIONS ##
 
 Once the data was cleaned and merged, we created our initial Model. We used Random Forest Classifier. We used the students final grade as label, and sorted the rest of factors based on their weight. Then we analyzed the main and interesting factors and created visualizations. We used Python Pandas Matplotlib and Seaborn library for data analysis and statistical data visualizations. These are the seven questions we analyzed.
 
@@ -43,11 +42,11 @@ How does students Quarter-1 and Quarter-2 scores impact Final grade?
 
 Are aspirations for higher education important?
 
-FURTHER RESEARCH
+## FURTHER RESEARCH ##
 
 We also have a further research page, where we have listed the interesting reads about the studies and research done in the field of higher education and predictive analytics. Pointers for anyone intrested in the doing further research.
 
-MODEL
+## MODEL ##
 
 Before constructing a model, the data had to be processed for optimal learning. This included converting all columns with text values into integers. For the columns with only two different values, a list comprehension was used to binary-encode the data. Columns with multiple text values ('mother_job', 'father_job', 'reason') were split up into multiple binary-encoded columns using the pandas.get_dummies() function. Finally, the 'Pass_Fail' column was one-hot-encoded.
 
@@ -69,12 +68,11 @@ We were able to implement to modules that drastically improved the performance o
 
 We saved our final model to Test_Score_LR_v2.pkl pickle file.
 
-PREDICT
+## PREDICT ##
 
 We used python flask. For the predict page we used GET method to load the page and POST method when the form is submitted. Which run the model to display the predictions based on the input parameters. And displayed the final predictions "This Student is Likely to Pass" or "This Student is at Risk of Failing".
 
-
-CONCLUSION
+## CONCLUSION ##
 
 We hope our prediction tool can be used to help schools and parents improve the students overall school performance. As a direct outcome of this project, more efficient student prediction tools can be developed, improving the quality of education and enhancing school resource management. The results show that a good predictive accuracy can be achieved, provided that we have access to socio-economic data from various school districts.
 
